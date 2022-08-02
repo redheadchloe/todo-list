@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+
+*, *::after, *::before{
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+}
+body{
+    scroll-behavior: smooth;
+    font-family: 'Rubik', sans-serif;
+    padding: 10rem 0;
+    max-width: 60vw;
+    margin: auto;
+    background: #aa4b6b;  
+    background: linear-gradient(to right, #3b8d99, #6b6b83, #aa4b6b) no-repeat;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style-type: none;
+    padding: .5rem;
+    background: #fff;
+}
+
+header{height: 5vh;}
+form{height: 15vh;}
+
+h2{color: #fff;
+font-weight: normal;
+text-align: center;}
+
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+input, button, select {
+    height: 50px;
+    border: none;
+    padding: .5rem 1rem;
+}
+input, li, select{
+    font-size: 1.2rem;
+}
+
+button{
+background: #fff;
+cursor: pointer;
+}
+
+i{
+font-size: 1.8rem;
+color: #aa4b6b;
+} 
+
+button:hover{
+    background: #aa4b6b;
+}
+
+button:hover i{
+    color: #fff;
+    transition: .3s ease-out;
+}
+
+input:focus, select:focus{
+    outline: none;
+}
+
+select {
+    appearance: none;
+    color: #3b8d99;
+    max-width: 14rem;
+}
+.filter-wrapper{position: relative;
+cursor: pointer;}
+.filter-wrapper::after{
+    content: '\25bc';
+    display: block;
+    background: #3b8d99;
+    color: #fff;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    font-size: 1.2rem;
+    padding:1rem;
+    height: 100%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    cursor: pointer;
+}
+.select:hover::after{
+    opacity: 0.7;
+}
+
+
+.todo{
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    transition: .4s;
+}
+
+.todo .todo-item{
+    flex:1;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    overflow-x: hidden;
+    overflow-y: visible;
+    flex-wrap: wrap;
+    word-break: break-all; 
+    width: 200px;
+}
+
+.focus{
+    animation: text-focus-in .4s cubic-bezier(0.550, 0.085, 0.680, 0.530);
+}
+@keyframes text-focus-in {
+    0% {
+    filter: blur(12px);
+    opacity: 0;
+    }
+    100% {
+    filter: blur(0px);
+    opacity: 1;
+    }
+  }
+  
+
+.todo i{
+    color: #fff;
+}
+
+.todo button:first-of-type{background: #aa4b6b;}
+.todo button:last-of-type{background: #3b8d99;}
+
+.todo button i{
+    pointer-events: none;
+}
+
+.done{
+    text-decoration: line-through;
+    opacity: .5;
+}
+
+.fall{
+    transform: translateY(8rem) rotateZ(20deg);
+    opacity: 0;
+}
